@@ -1,3 +1,11 @@
-No pictures
-
-<a href='#'>Post a picture</a>
+<% if @posts.any? %>
+	<% @posts.each do |post| %>
+		<li>
+			<%= image_tag post.image.url(:medium) %>
+			<%= post.description %>
+		</li>
+	<% end %>
+<% else %>
+	No images
+<% end %>
+	<%= link_to "Post an image", new_post_path %>
