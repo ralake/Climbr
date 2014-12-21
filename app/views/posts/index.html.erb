@@ -5,6 +5,8 @@
 	<% @posts.each do |post| %>
 		<li>
 			<%= image_tag post.image.url(:medium) %>
+			<%= link_to "Like", post_likes_path(post), method: :post %>
+			<p><%= post.likes.count %> likes</p>
 			<%= post.description %>
 			<% if !current_user.nil? %>
 				<%= link_to "Comment", new_post_comment_path(post) %>

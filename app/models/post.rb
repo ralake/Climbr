@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
 
 	has_many :comments, dependent: :destroy
+	has_many :likes
 
 	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" },
 	:storage => :s3,

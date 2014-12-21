@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/posts' => 'posts#index'
 
   resources :posts do
-    resources :comments
+    resources :comments, :likes
   end
 
   root to: "posts#index"

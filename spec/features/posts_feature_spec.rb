@@ -21,7 +21,7 @@ feature 'Posts' do
 
 		scenario 'A signed-up-user fills out a form to post an image' do
 			user_signs_up('test@test.com', 'password1')
-			post_image
+			user_posts_image
 			expect(page).to have_css("img[src*='AD.jpg']")
 			expect(page).to have_content("Ama Dablam")
 		end
@@ -32,7 +32,7 @@ feature 'Posts' do
 
 		scenario "A user cannot edit a post unless they are the author" do
 			user_signs_up('test@test.com', 'password1')
-			post_image
+			user_posts_image
 			click_link("Sign out")
 			user_signs_up('test@test2.com', 'password2')
 			expect(page).not_to have_link("Edit post")
@@ -40,7 +40,7 @@ feature 'Posts' do
 
 		scenario "A user who created a post can edit it" do
 			user_signs_up('test@test.com', 'password1')
-			post_image
+			user_posts_image
 			click_link('Edit post')
 			fill_in "Description", with: "Ama Dablam South Face"
 			click_button('Post!')
@@ -53,7 +53,7 @@ feature 'Posts' do
 
 		scenario "A user cannot delete a post unless they are the author" do
 			user_signs_up('test@test.com', 'password1')
-			post_image
+			user_posts_image
 			click_link("Sign out")
 			user_signs_up('test@test2.com', 'password2')
 			expect(page).not_to have_link("Delete post")
@@ -61,7 +61,7 @@ feature 'Posts' do
 
 		scenario 'A user who created a post can delete it' do
 			user_signs_up('test@test.com', 'password1')
-			post_image
+			user_posts_image
 			click_link("Delete post")
 			expect(page).to have_content("No images")
 			expect(page).to have_content("Post deleted")

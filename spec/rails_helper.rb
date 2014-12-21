@@ -6,14 +6,14 @@ require 'rspec/rails'
 require 'capybara/rails'
 # require 'aws'
 
-def post_image
+def user_posts_image
   click_link("Post an image")
   fill_in 'Description', with: "Ama Dablam"
   attach_file('post[image]', 'spec/features/AD.jpg')
   click_button('Post!')
 end
 
-def post_comment
+def user_posts_comment
   click_link('Comment')
   fill_in 'Comment', with: "Marvelous image!"
   click_button('Post comment')
