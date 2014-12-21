@@ -14,6 +14,12 @@ def post_image
   click_button('Post!')
 end
 
+def post_comment
+  click_link('Comment')
+  fill_in 'Comment', with: "Marvelous image!"
+  click_button('Post comment')
+end
+
 
 # Add additional requires below this line. Rails is not loaded until this point!
 

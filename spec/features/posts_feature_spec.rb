@@ -38,8 +38,9 @@ feature 'Posts' do
 
 		scenario 'A user can delete a post' do
 			post_image
-			click_link('Delete post')
-			expect(page).to have_content('No images')
+			click_link("Delete post")
+			expect(page).to have_content("No images")
+			expect(page).to have_content("Post deleted")
 		end
 
 	end

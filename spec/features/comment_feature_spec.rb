@@ -6,9 +6,7 @@ feature 'Comments' do
 
 		scenario 'Posting a comment' do
 			post_image
-			click_link('Comment')
-			fill_in 'Comment', with: "Marvelous image!"
-			click_button('Post comment')
+			post_comment
 			expect(page).to have_content("Marvelous image!")
 		end
 
