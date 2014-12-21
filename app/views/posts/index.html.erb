@@ -3,6 +3,7 @@
 		<li>
 			<%= image_tag post.image.url(:medium) %>
 			<%= post.description %>
+			<%= link_to "Delete post", post_path(post), method: :delete %>
 		</li>
 	<% end %>
 <% else %>
