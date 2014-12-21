@@ -15,8 +15,7 @@ feature 'Comments' do
 			user_signs_up
 			post_image
 			click_link("Sign out")
-			click_link('Comment')
-			expect(page).to have_content("You must be signed in to post comments")
+			expect(page).not_to have_link("Comment")
 		end
 
 	end
