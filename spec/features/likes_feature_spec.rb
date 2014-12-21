@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Likes' do
 	
-	scenario "A user likes a post and the likes count goes up" do
+	scenario "A user likes a post and the likes count goes up", js: true do
 		user_signs_up('test@test.com', 'password1')
 		user_posts_image
 		click_link('Like')

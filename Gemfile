@@ -15,6 +15,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'aws-sdk'
 gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'poltergeist'
+gem 'database_cleaner'
 
 group :test do
 	gem 'rspec-rails'
