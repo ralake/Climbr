@@ -11,6 +11,13 @@ feature 'Comments' do
 			expect(page).to have_content("Marvelous image!")
 		end
 
+		scenario "A comment will have information on when it was posted" do
+			user_signs_up('test@test.com', 'testtest1')
+			user_posts_image
+			user_posts_comment
+			expect(page).to have_content('Posted')
+		end
+
 		scenario "A user who hasn't signed up attempts to comment on a post" do
 			user_signs_up('test@test.com', 'testtest1')
 			user_posts_image
