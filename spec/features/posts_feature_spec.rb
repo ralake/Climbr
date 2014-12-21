@@ -56,8 +56,7 @@ feature 'Posts' do
 			post_image
 			click_link("Sign out")
 			another_user_signs_up
-			click_link("Delete post")
-			expect(page).to have_content("You cannot delete this post")
+			expect(page).not_to have_link("Delete post")
 		end
 
 		scenario 'A user who created a post can delete it' do

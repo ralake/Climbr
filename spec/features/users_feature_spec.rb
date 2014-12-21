@@ -10,7 +10,7 @@ feature 'Users' do
 			expect(page).to have_link("Sign in")
 		end
 
-		scenario "should not see sign outn link" do
+		scenario "should not see sign out link" do
 			visit '/posts'
 			expect(page).not_to have_link("Sing out")
 		end
