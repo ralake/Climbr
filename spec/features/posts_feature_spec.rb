@@ -5,7 +5,7 @@ feature 'Posts' do
 	context 'No pictures have been uploaded' do
 
 		scenario 'Should display a prompt to post a picture' do
-			visit '/posts'
+			user_signs_up
 			expect(page).to have_content("No images")
 			expect(page).to have_link("Post an image")
 		end
@@ -14,7 +14,13 @@ feature 'Posts' do
 
 	context 'Posting pictures' do
 
-		scenario 'A user fills out a form to post the image' do
+		scenario 'A user cannot post an image unless they are signed in' do
+			visit '/posts'
+			expect(page).not_to have_link("Post an image")
+		end
+
+		scenario 'A sign-up-user fills out a form to post an image' do
+			user_signs_up
 			post_image
 			expect(page).to have_css("img[src*='AD.jpg']")
 			expect(page).to have_content("Ama Dablam")
@@ -24,7 +30,17 @@ feature 'Posts' do
 
 	context 'Editing a post' do
 
-		scenario 'A user edits a post' do
+		scenario 'A user cannot edit a post unless they are the author' do
+			user_signs_up
+			post_image
+			click_link("Sign out")
+			another_user_signs_up
+			click_link("Edit post")
+			expect(page).to have_content("You cannot edit this post")
+		end
+
+		scenario 'A user who created a post can edit it' do
+			user_signs_up
 			post_image
 			click_link('Edit post')
 			fill_in "Description", with: "Ama Dablam South Face"
@@ -37,6 +53,7 @@ feature 'Posts' do
 	context 'Deleting posts' do
 
 		scenario 'A user can delete a post' do
+			user_signs_up
 			post_image
 			click_link("Delete post")
 			expect(page).to have_content("No images")

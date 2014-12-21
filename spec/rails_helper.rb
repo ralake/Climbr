@@ -7,7 +7,6 @@ require 'capybara/rails'
 # require 'aws'
 
 def post_image
-  visit '/posts'
   click_link("Post an image")
   fill_in 'Description', with: "Ama Dablam"
   attach_file('post[image]', 'spec/features/AD.jpg')
@@ -18,6 +17,24 @@ def post_comment
   click_link('Comment')
   fill_in 'Comment', with: "Marvelous image!"
   click_button('Post comment')
+end
+
+def user_signs_up
+  visit'/posts'
+  click_link("Sign up")
+  fill_in 'Email', with: 'test@test.com'
+  fill_in 'Password', with: 'Password1'
+  fill_in 'Password confirmation', with: 'Password1'
+  click_button("Sign up")
+end
+
+def another_user_signs_up
+  visit'/posts'
+  click_link("Sign up")
+  fill_in 'Email', with: 'test@test2.com'
+  fill_in 'Password', with: 'Password2'
+  fill_in 'Password confirmation', with: 'Password2'
+  click_button("Sign up")
 end
 
 

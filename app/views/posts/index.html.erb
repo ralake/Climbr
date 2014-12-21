@@ -1,4 +1,6 @@
-<%= link_to "Post an image", new_post_path %>
+<% if !current_user.nil? %>
+	<%= link_to "Post an image", new_post_path %>
+<% end %>
 <% if @posts.any? %>
 	<% @posts.each do |post| %>
 		<li>

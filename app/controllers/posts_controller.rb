@@ -10,11 +10,17 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.create(post_params)
+		@post.user_id = current_user.id
+		@post.save
 		redirect_to posts_path
 	end
 
 	def edit
 		@post = Post.find(params[:id])
+		if current_user.id != @post.user_id
+			flash[:alert] = "You cannot edit this post"
+		else
+		end
 	end
 
 	def update
