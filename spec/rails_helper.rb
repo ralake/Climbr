@@ -6,6 +6,14 @@ require 'rspec/rails'
 require 'capybara/rails'
 # require 'aws'
 
+def post_image
+  visit '/posts'
+  click_link("Post an image")
+  fill_in 'Description', with: "Ama Dablam"
+  attach_file('post[image]', 'spec/features/AD.jpg')
+  click_button('Post!')
+end
+
 
 # Add additional requires below this line. Rails is not loaded until this point!
 

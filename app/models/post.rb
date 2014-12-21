@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
 
+	has_many :comments
+
 	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" },
 	:storage => :s3,
 	:s3_credentials => {

@@ -28,17 +28,8 @@ feature 'Posts' do
 			post_image
 			click_link('Delete post')
 			expect(page).to have_content('No images')
-			save_and_open_page
 		end
 
-	end
-
-	def post_image
-		visit '/posts'
-		click_link("Post an image")
-		fill_in 'Description', with: "Ama Dablam"
-		attach_file('post[image]', 'spec/features/AD.jpg')
-		click_button('Post!')
 	end
 
 end

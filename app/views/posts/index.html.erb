@@ -1,12 +1,18 @@
+<%= link_to "Post an image", new_post_path %>
 <% if @posts.any? %>
 	<% @posts.each do |post| %>
 		<li>
 			<%= image_tag post.image.url(:medium) %>
 			<%= post.description %>
+			<%= link_to "Comment", new_post_comment_path(post) %>
 			<%= link_to "Delete post", post_path(post), method: :delete %>
+			<% if post.comments.any? %>
+				<%post.comments.each do |comment| %>
+					<li><%= comment.comments %></li>
+				<% end %>
+			<% end %>
 		</li>
 	<% end %>
 <% else %>
 	No images
 <% end %>
-	<%= link_to "Post an image", new_post_path %>
