@@ -3,12 +3,12 @@ $(document).ready(function() {
 	$('.likes-link').on('click', function(event) {
 		event.preventDefault();
 
-		var likesCount = $(this).siblings('likes_count');
+		var likeCount = $(this).siblings('.likes-count');
 
 		$.post(this.href, function(response) {
 			likeCount.text(response.new_like_count);
-		});
+		})
 
-	});
+	})
 
-});
+})
