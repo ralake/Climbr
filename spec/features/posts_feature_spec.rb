@@ -22,6 +22,18 @@ feature 'Posts' do
 
 	end
 
+	context 'Editing a post' do
+
+		scenario 'A user edits a post' do
+			post_image
+			click_link('Edit post')
+			fill_in "Description", with: "Ama Dablam South Face"
+			click_button('Post!')
+			expect(page).to have_content("Ama Dablam South Face")
+		end
+
+	end
+
 	context 'Deleting posts' do
 
 		scenario 'A user can delete a post' do
