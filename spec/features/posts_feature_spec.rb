@@ -19,7 +19,7 @@ feature 'Posts' do
 			expect(page).not_to have_link("Post an image")
 		end
 
-		scenario 'A sign-up-user fills out a form to post an image' do
+		scenario 'A signed-up-user fills out a form to post an image' do
 			user_signs_up
 			post_image
 			expect(page).to have_css("img[src*='AD.jpg']")
@@ -28,18 +28,17 @@ feature 'Posts' do
 
 	end
 
-	context 'Editing a post' do
+	context "Editing a post" do
 
-		scenario 'A user cannot edit a post unless they are the author' do
+		scenario "A user cannot edit a post unless they are the author" do
 			user_signs_up
 			post_image
 			click_link("Sign out")
 			another_user_signs_up
-			click_link("Edit post")
-			expect(page).to have_content("You cannot edit this post")
+			expect(page).not_to have_link("Edit post")
 		end
 
-		scenario 'A user who created a post can edit it' do
+		scenario "A user who created a post can edit it" do
 			user_signs_up
 			post_image
 			click_link('Edit post')
@@ -50,9 +49,18 @@ feature 'Posts' do
 
 	end
 
-	context 'Deleting posts' do
+	context "Deleting posts" do
 
-		scenario 'A user can delete a post' do
+		scenario "A user cannot delete a post unless they are the author" do
+			user_signs_up
+			post_image
+			click_link("Sign out")
+			another_user_signs_up
+			click_link("Delete post")
+			expect(page).to have_content("You cannot delete this post")
+		end
+
+		scenario 'A user who created a post can delete it' do
 			user_signs_up
 			post_image
 			click_link("Delete post")
