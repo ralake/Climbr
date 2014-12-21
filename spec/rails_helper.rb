@@ -19,21 +19,12 @@ def post_comment
   click_button('Post comment')
 end
 
-def user_signs_up
+def user_signs_up(email, password)
   visit'/posts'
   click_link("Sign up")
-  fill_in 'Email', with: 'test@test.com'
-  fill_in 'Password', with: 'Password1'
-  fill_in 'Password confirmation', with: 'Password1'
-  click_button("Sign up")
-end
-
-def another_user_signs_up
-  visit'/posts'
-  click_link("Sign up")
-  fill_in 'Email', with: 'test@test2.com'
-  fill_in 'Password', with: 'Password2'
-  fill_in 'Password confirmation', with: 'Password2'
+  fill_in 'Email', with: email
+  fill_in 'Password', with: password
+  fill_in 'Password confirmation', with: password
   click_button("Sign up")
 end
 
