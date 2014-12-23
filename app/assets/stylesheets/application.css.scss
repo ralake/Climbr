@@ -23,6 +23,7 @@ body {
 	background-attachment: fixed;
 	background-size: 100%;
 	opacity: 50%;
+	padding-top: 40px;
 }
 
 img {
@@ -49,6 +50,7 @@ img {
 
 .comment-holder {
 	padding: 2px;
+	padding-left: 5px;
 	margin-top: 7px;
 	margin-bottom: 7px;
 	background-color: #E0E0E0;
@@ -70,14 +72,34 @@ img {
 	margin-bottom: 0px;
 }
 
-
-
 .likes-link {
 	margin-right: 3px;
 }
 
-.navbar navbar-default {
+.navbar-btn {
+	margin-top: 11px;
+}
+
+.navbar-right {
+	margin-right: 7px;
+	margin-left: 15px;
+}
+
+.navbar-default {
 	padding: 5px;
+	background: rgba(0,0,0,0.6);
+	color: white;
+	.navbar-text {
+		font-weight: bold;
+		margin-top: 7px;
+		margin-bottom: 7px;
+		font-size: 30px;
+		color: white;
+	}
+}
+
+.notice {
+	text-align: center;
 }
 
 .panel-body {

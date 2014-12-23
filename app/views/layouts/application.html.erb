@@ -14,8 +14,8 @@
 			<%= link_to "Post an image", new_post_path, class: "btn btn-default navbar-btn" %>
 			<%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-default navbar-btn navbar-right" %>
 		<% else %>
-			<%= link_to "Sign up", new_user_registration_path, class: "btn btn-default navbar-btn"%>
-			<%= link_to "Sign in", new_user_session_path, class: "btn btn-default navbar-btn" %>
+			<%= link_to "Sign up", new_user_registration_path, class: "btn btn-default navbar-btn navbar-right"%>
+			<%= link_to "Sign in", new_user_session_path, class: "btn btn-default navbar-btn navbar-right" %>
 		<% end %>
 </nav>
 

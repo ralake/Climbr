@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
 	has_many :comments, dependent: :destroy
 	has_many :likes
 
-	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" },
+	has_attached_file :image, :styles => { :medium => "500x500>", :thumb => "100x100>" },
 	:storage => :s3,
 	:s3_credentials => {
 	  :bucket => ENV['S3_BUCKET_NAME'],
