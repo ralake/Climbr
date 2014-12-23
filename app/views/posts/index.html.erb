@@ -5,19 +5,18 @@
 		<div class='col-md-4'>
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<div class="thumbnail">
-					<%= image_tag post.image.url(:medium), class: "post-image" %>
+				<div class="post-image">
+					<%= image_tag post.image.url(:medium) %>
 				</div>
-				<br>
 				<h4><%= post.description %></h4>
-				<br>
 				<%= link_to "Like", post_likes_path(post), class: 'likes-link' %>
-				<span class="likes-count"> <%= post.likes.count %> </span> likes
-				<hr>
+				<span class="likes-count"><%= post.likes.count %> </span> likes
 				<% if post.comments.any? %>
 					<%post.comments.each do |comment| %>
-						<p><%= comment.comments %></p>
+					<div class="comment-holder">
+						<p class="comment">"<%= comment.comments %>"</p>
 						<p class="post-info">(Posted <%= time_ago_in_words(comment.created_at) %> ago)</p>
+					</div>
 					<% end %>
 				<% end %>
 			</div>

@@ -8,16 +8,16 @@
 </head>
 <body>
 
-<div class="page-header">
-	<h1>Climbagram</h1>
+<nav class="navbar navbar-default navbar-fixed-top">
+	<p class='navbar-text'>Climbagram</p>
 		<% if user_signed_in? %>
-			<%= link_to "Post an image", new_post_path, class: 'btn btn-warning' %>
-			<%= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'btn btn-default' %>
+			<%= link_to "Post an image", new_post_path, class: "btn btn-default navbar-btn" %>
+			<%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-default navbar-btn navbar-right" %>
 		<% else %>
-			<%= link_to "Sign up", new_user_registration_path, class: 'btn btn-default' %>
-			<%= link_to "Sign in", new_user_session_path, class: 'btn btn-default' %>
+			<%= link_to "Sign up", new_user_registration_path, class: "btn btn-default navbar-btn"%>
+			<%= link_to "Sign in", new_user_session_path, class: "btn btn-default navbar-btn" %>
 		<% end %>
-</div>
+</nav>
 
 <p class="alert"><%= flash[:alert] %></p>
 <p class="notice"><%= flash[:notice] %></p>
