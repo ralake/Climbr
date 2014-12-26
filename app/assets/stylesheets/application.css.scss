@@ -33,15 +33,24 @@ img {
 	border-radius: 4px;
 }
 
+#user_email {
+	height: 28px;
+}
+
 .panel-default {
 	width: 360px;
 }
 
-.postimageform {
+.actions {
+	margin-bottom: 7px;
+}
+
+.login {
 	margin-left: 23px;
 }
 
 .form-control {
+	padding: 0px;
 	width: 280px;
 	margin-bottom: 7px;
 }
