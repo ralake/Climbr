@@ -27,15 +27,34 @@ body {
 }
 
 img {
-	width: 330px;
+	width: 100%;
 	border-width: 2px;
 	border-color: black;
 	border-radius: 4px;
 }
 
+.panel-default {
+	width: 360px;
+}
+
+.form-control {
+	width: 280px;
+	margin-bottom: 5px;
+}
+
+#description_text {
+	font-size: 20px;
+}
+
+#post_image {
+	margin-bottom: 5px;
+	padding: 6px;
+	height: 34px;
+}
+
 .post-image {
 	height: 250px;
-	width: 325px;
+	width: 327px;
 	overflow: hidden;
 	border-width: 2px;
 	border-color: black;
@@ -103,7 +122,13 @@ img {
 }
 
 .panel-body {
+	-webkit-box-shadow: 0px 0px 14px 0px rgba(51, 50, 50, 0.55);
+	-moz-box-shadow:    0px 0px 14px 0px rgba(51, 50, 50, 0.55);
+	box-shadow:         0px 0px 14px 0px rgba(51, 50, 50, 0.55);
 	background-color: #F0F0F0;
 	border-radius: 4px;
 	padding-bottom: 2px;
+	img {
+		max-width: 100%;	
+	}
 }
