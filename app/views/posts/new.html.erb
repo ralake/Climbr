@@ -1,7 +1,6 @@
 <div class='postimageform'>
 	<%= form_for @post, html: { multipart: true } do |f| %>
-		<%= f.label :description, id: 'description_text'%>
-		<%= f.text_field :description , class: 'form-control' %>
+		<%= f.text_field :description , placeholder: "Description...", class: 'form-control' %>
 		<%= f.file_field :image , class: 'btn btn-default' %>
 		<%= f.submit 'Post!', class: 'btn btn-default' %>
 	<% end %>

@@ -10,7 +10,7 @@ require 'support/database_cleaner'
 
 def user_posts_image
   click_link("Post an image")
-  fill_in 'Description', with: "Ama Dablam"
+  fill_in 'post[description]', with: "Ama Dablam"
   attach_file('post[image]', 'spec/features/AD.jpg')
   click_button('Post!')
 end
