@@ -13,6 +13,7 @@ module InstagramClone
   class Application < Rails::Application
 
     Dotenv.load Rails.root.join('.env')
+    config.assets.initialize_on_precompile = false
 
   end
 end
