@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 		@post = Post.create(post_params)
 		@post.user_id = current_user.id
 		@post.save
+		@post.username = current_user.username
 		redirect_to posts_path
 	end
 
@@ -41,7 +42,7 @@ class PostsController < ApplicationController
 	end
 
 	def post_params
-		params.require(:post).permit(:description, :image, :id).merge(username: "@#{current_user.username}")
+		params.require(:post).permit(:description, :image, :id)
 	end
 
 end
