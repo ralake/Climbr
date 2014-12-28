@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
 	end
 
 	def comments_params
-		params.require(:comment).permit(:comments)
+		params.require(:comment).permit(:comments).merge(username: "@#{current_user.username}")
 	end
 
 end
