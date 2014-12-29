@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 	def edit
 		@post = Post.find(params[:id])
 		if current_user.id != @post.user_id
-			flash[:alert] = "You cannot edit this post"
+			flash[:notice] = "You cannot edit this post"
 		else
 		end
 	end
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
 			@post.destroy
 			flash[:notice] = "Post deleted"
 		else
-			flash[:alert] = "You cannot delete this post"
+			flash[:notice] = "You cannot delete this post"
 		end
 		redirect_to posts_path
 	end

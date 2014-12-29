@@ -23,11 +23,15 @@ body {
 	background-attachment: fixed;
 	background-size: 100%;
 	opacity: 50%;
-	padding-top: 40px;
+	padding-top: 80px;
 }
 
 h2 {
 	margin-top: 10px;
+}
+
+.forgot-password-header {
+	font-size: 22px;
 }
 
 img {
@@ -140,6 +144,11 @@ img {
 
 .notice {
 	text-align: center;
+}
+
+.alert {
+	text-align: center;
+	margin-bottom: 0px;
 }
 
 .panel-body {

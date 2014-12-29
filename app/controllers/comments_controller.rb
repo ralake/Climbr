@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 			@post = Post.find(params[:post_id])
 			@comment = Comment.new
 		else
-			flash[:alert] = "You must be signed in to post comments"
+			flash[:notice] = "You must be signed in to post comments"
 			redirect_to posts_path
 		end
 	end
