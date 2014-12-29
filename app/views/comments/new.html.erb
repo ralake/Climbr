@@ -1,5 +1,7 @@
+<div class='postimageform'>
 <%= form_for [@post, @comment] do |f| %>
 	<%= f.label :comments %>
-	<%= f.text_field :comments %>
-	<%= f.submit 'Post comment' %>
+	<%= f.text_field :comments, class: 'form-control'%>
+	<%= f.submit 'Post comment', class: "btn btn-default", id: "comment-button" %>
 <% end %>
+</div>
