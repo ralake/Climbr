@@ -8,18 +8,20 @@
 				<div class="post-image">
 					<%= link_to (image_tag post.image.url(:medium)), post_path(post), id: "show-image" %>
 				</div>
-				<h4><%= post.description %></h4>
-				<p>Posted by <%= post.username %></p>
-				<%= link_to "Like", post_likes_path(post), class: 'likes-link' %>
-				<span class="likes-count"><%= post.likes.count %> </span> likes
-				<% if post.comments.any? %>
+				<div class="scroller">
+					<h4><%= post.description %></h4>
+					<p>Posted by <%= post.username %></p>
+					<%= link_to "Like", post_likes_path(post), class: 'likes-link' %>
+					<span class="likes-count"><%= post.likes.count %> </span> likes
+					<% if post.comments.any? %>
 					<%post.comments.each do |comment| %>
-					<div class="comment-holder">
-						<p class="comment">"<%= comment.comments %>"</p>
-						<p class="post-info">(Posted <%= time_ago_in_words(comment.created_at) %> ago by <%= comment.username %>)</p>
-					</div>
+						<div class="comment-holder">
+							<p class="comment">"<%= comment.comments %>"</p>
+							<p class="post-info">(Posted <%= time_ago_in_words(comment.created_at) %> ago by <%= comment.username %>)</p>
+						</div>
 					<% end %>
 				<% end %>
+				</div>
 			</div>
 			<div class="panel-footer">
 				<div class="btn-group btn-group-justified btn-group-sm" role="group" aria-label="...">

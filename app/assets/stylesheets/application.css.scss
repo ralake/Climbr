@@ -30,6 +30,12 @@ h2 {
 	margin-top: 10px;
 }
 
+.scroller {
+	margin-top: 3px;
+	max-height: 177px;
+	overflow-y: scroll; 
+}
+
 .forgot-password-header {
 	font-size: 22px;
 }
