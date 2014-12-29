@@ -6,7 +6,7 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<div class="post-image">
-					<%= image_tag post.image.url(:medium) %>
+					<%= link_to (image_tag post.image.url(:medium)), post_path(post), id: "show-image" %>
 				</div>
 				<h4><%= post.description %></h4>
 				<p>Posted by <%= post.username %></p>

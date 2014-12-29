@@ -75,4 +75,15 @@ feature 'Posts' do
 
 	end
 
+	context "Viewing full size images" do
+
+		scenario "A user clicks on an image post on the homepage" do
+			user_signs_up('test@test.com', 'tester', 'password1')
+			user_posts_image
+			find("#show-image").click
+			expect(page).to have_css("img[src*='AD.jpg']")
+		end
+
+	end
+
 end
