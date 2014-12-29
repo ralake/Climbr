@@ -13,7 +13,7 @@
 					<postedby>Posted by <%= post.username %></postedby>
 					<likeinfo>
 						<%= link_to "Like", post_likes_path(post), class: 'likes-link' %>
-						<span class="likes-count"><%= post.likes.count %> </span> likes
+						<span class="likes-count"><%= post.likes.count %> </span> <%= "like".pluralize(post.likes.count) %>
 					</likeinfo>
 					<% if post.comments.any? %>
 					<%post.comments.each do |comment| %>
