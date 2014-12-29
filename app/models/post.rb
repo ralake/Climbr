@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
 	has_many :likes
 	belongs_to :user
 
-	has_attached_file :image, :styles => { :medium => "500x500>", :thumb => "100x100>" },
+	has_attached_file :image, :styles => { :medium => "500x500>" },
 	:storage => :s3,
 	:s3_credentials => {
 	  :bucket => ENV['S3_BUCKET_NAME'],
