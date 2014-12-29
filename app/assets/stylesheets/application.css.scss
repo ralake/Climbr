@@ -30,9 +30,18 @@ h2 {
 	margin-top: 10px;
 }
 
+likeinfo {
+	float: right;
+	margin: 0px;
+}
+
+postedby {
+	max-width: 200px;
+}
+
 .scroller {
 	margin-top: 3px;
-	max-height: 177px;
+	height: 160px;
 	overflow-y: scroll; 
 }
 
@@ -46,6 +55,7 @@ h2 {
 
 h4 {
 	margin-bottom: 2px;
+	margin-top: 5px;
 }
 
 img {

@@ -10,9 +10,11 @@
 				</div>
 				<div class="scroller">
 					<h4><%= post.description %></h4>
-					<p>Posted by <%= post.username %></p>
-					<%= link_to "Like", post_likes_path(post), class: 'likes-link' %>
-					<span class="likes-count"><%= post.likes.count %> </span> likes
+					<postedby>Posted by <%= post.username %></postedby>
+					<likeinfo>
+						<%= link_to "Like", post_likes_path(post), class: 'likes-link' %>
+						<span class="likes-count"><%= post.likes.count %> </span> likes
+					</likeinfo>
 					<% if post.comments.any? %>
 					<%post.comments.each do |comment| %>
 						<div class="comment-holder">
