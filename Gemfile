@@ -19,13 +19,15 @@ gem 'aws-sdk'
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'poltergeist'
 gem 'database_cleaner'
+gem 'jquery-ui-rails'
+gem 'jquery-modal-rails'
 
 group :test do
-	gem 'rspec-rails'
-	gem 'rspec-collection_matchers'
-	gem 'capybara'
-	gem 'launchy'
-	gem 'byebug'
+  gem 'rspec-rails'
+  gem 'rspec-collection_matchers'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'byebug'
 end
 
 # Use ActiveModel has_secure_password

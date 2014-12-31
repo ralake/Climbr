@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery-ui
+ *= require jquery.modal
  */
 
 @import 'bootstrap-sprockets';
@@ -40,6 +42,11 @@ img {
 	border-width: 2px;
 	border-color: black;
 	border-radius: 4px;
+}
+
+.modal.current {
+  padding-top: 115px;
+  visibility:hidden;
 }
 
 .page-header {
