@@ -6,7 +6,7 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<div class="post-image">
-					<%= link_to (image_tag post.image.url(:medium)), post_path(post), id: "show-image" %>
+					<%= link_to_modal (image_tag post.image.url(:medium)), post_path(post), id: "show-image" %>
 				</div>
 				<div class="scroller">
 					<h4><%= post.description %></h4>
