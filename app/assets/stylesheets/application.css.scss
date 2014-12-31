@@ -51,6 +51,7 @@ img {
   height: 550px;
   width: auto;
   overflow-y: scroll;
+  border-radius: 4px;
 }
 
 .modal.current {
@@ -110,12 +111,12 @@ img {
   }
 }
 
-.climbagram-link {
+.climbr-link {
   color: white;
   text-decoration: none;
 }
 
-.climbagram-link:hover {
+.climbr-link:hover {
   color: #858585;
   text-decoration: none;  
 }
