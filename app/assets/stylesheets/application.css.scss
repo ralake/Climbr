@@ -110,6 +110,11 @@ img {
 }
 
 /* Devise / User interaction */
+
+#sign-up-form, #sign-in-form {
+  visibility: visible;
+}
+
 .border-form-div {
   max-width: 300px;
   padding: 19px 29px 29px;
