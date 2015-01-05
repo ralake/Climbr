@@ -12,19 +12,19 @@ Breakdown of models:
 Used devise for user management.
 
 ###Post
-Used ImageMagick and Paperclip to manage images within the app and Amazon WS S3 for storage.
+Used ImageMagick and Paperclip to manage images within the app and AWS S3 for storage.
 
 ###Comment
-Users can post numerous comments on a post. The comments contain information on how long ago 
+Users can post numerous comments on a post and the comment has details on when it was posted and by whom.
 
 ###Like
 Used AJAX to update likes in real-time without a page refresh.
 
-[Heroku Link]: https://climbagram.herokuapp.com/
+[Heroku Link](https://climbagram.herokuapp.com/)
 
 Challenges
 ----------
-
+I have an on-going issue with portrait photos being displayed as landscape when the full image is viewed. It seems that this is to do with the image's EXIF data but I cannot find a way of rectifying this. I also stuggled with setting up modals for the forms and posts but this is now in place.
 
 Technologies
 ------------
