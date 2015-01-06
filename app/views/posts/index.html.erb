@@ -10,7 +10,7 @@
 				</div>
 				<div class="scroller">
 					<h4><%= post.description %></h4>
-					<postedby>Posted by <%= post.username %></postedby>
+					<postedby>Posted by <%= post.user.username %></postedby>
 					<likeinfo>
 						<%= link_to "Like", post_likes_path(post), class: 'likes-link' %>
 						<span class="likes-count"><%= post.likes.count %> </span> <%= "like".pluralize(post.likes.count) %>
@@ -19,7 +19,7 @@
 					<%post.comments.each do |comment| %>
 						<div class="comment-holder">
 							<p class="comment">"<%= comment.comments %>"</p>
-							<p class="post-info">(Posted <%= time_ago_in_words(comment.created_at) %> ago by <%= comment.username %>)</p>
+							<p class="post-info">(Posted <%= time_ago_in_words(comment.created_at) %> ago by <%= comment.post.user.username %>)</p>
 						</div>
 					<% end %>
 				<% end %>

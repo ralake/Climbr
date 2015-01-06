@@ -16,7 +16,7 @@ feature 'Comments' do
 
 		scenario "A comment will have information on when it was posted" do
 			user_posts_comment
-			expect(page).to have_content('Posted')
+			expect(page).to have_content('Posted less than')
 		end
 
 		scenario "A user who hasn't signed up attempts to comment on a post" do

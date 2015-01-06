@@ -29,7 +29,7 @@ feature 'Posts' do
 		scenario "The user's username will appear on the post that they have created" do
 			user_signs_up('test@test.com', 'tester', 'password1')
 			user_posts_image
-			expect(page).to have_content("@tester")
+			expect(page).to have_content("tester")
 		end
 
 	end

@@ -1,6 +1,7 @@
 Climbr
 ======
 Makers Academy Week 8 Challenge
+[Heroku Link](https://climbagram.herokuapp.com/)
 
 Brief
 -----
@@ -20,7 +21,12 @@ Users can post numerous comments on a post. The comments contain information on 
 ###Like
 Used AJAX to update likes in real-time without a page refresh.
 
-[Heroku Link]: https://climbagram.herokuapp.com/
+Still To Do
+-----------
+- Username to posts and comments should be done by associations not merge info in the params.
+- create test helper module file in support and require this in the rails helper. Store test helper methods in there.
+- Amend responsiveness of grid and images and investigate break points.
+- @post.comments.create, refactor and put mentod in post model to create the comments, call this in the controller.
 
 Challenges
 ----------

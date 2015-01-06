@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141228225823) do
+ActiveRecord::Schema.define(version: 20150105125851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20141228225823) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "post_id"
-    t.string   "username"
+    t.integer  "user_id"
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 20141228225823) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "user_id"
-    t.string   "username"
   end
 
   create_table "users", force: true do |t|

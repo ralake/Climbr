@@ -12,12 +12,13 @@ class CommentsController < ApplicationController
 
 	def create
 		@post = Post.find(params[:post_id])
-		@post.comments.create(comments_params)
+		@comment = @post.comments.create(comments_params)
+		@comment.user_id = current_user.id
 		redirect_to posts_path
 	end
 
 	def comments_params
-		params.require(:comment).permit(:comments).merge(username: "@#{current_user.username}")
+		params.require(:comment).permit(:comments)
 	end
 
 end
