@@ -13,13 +13,17 @@ Breakdown of models:
 Used devise for user management.
 
 ###Post
-Used ImageMagick and Paperclip to manage images within the app and Amazon WS S3 for storage.
+Used ImageMagick and Paperclip to manage images within the app and AWS S3 for storage.
 
 ###Comment
-Users can post numerous comments on a post. The comments contain information on how long ago 
+Users can post numerous comments on a post and the comment has details on when it was posted and by whom.
 
 ###Like
 Used AJAX to update likes in real-time without a page refresh.
+
+Challenges
+----------
+I have an on-going issue with portrait photos being displayed as landscape when the full image is viewed. It seems that this is to do with the image's EXIF data but I cannot find a way of rectifying this. I also stuggled with setting up modals for the forms and posts but this is now in place.
 
 Still To Do
 -----------
@@ -27,10 +31,6 @@ Still To Do
 - create test helper module file in support and require this in the rails helper. Store test helper methods in there.
 - Amend responsiveness of grid and images and investigate break points.
 - @post.comments.create, refactor and put mentod in post model to create the comments, call this in the controller.
-
-Challenges
-----------
-
 
 Technologies
 ------------
