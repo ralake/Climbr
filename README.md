@@ -27,10 +27,9 @@ I have an on-going issue with portrait photos being displayed as landscape when 
 
 Still To Do
 -----------
-- Username to posts and comments should be done by associations not merge info in the params.
-- create test helper module file in support and require this in the rails helper. Store test helper methods in there.
 - Amend responsiveness of grid and images and investigate break points.
 - @post.comments.create, refactor and put mentod in post model to create the comments, call this in the controller.
+- Refactor controllers and place logic in models
 
 Technologies
 ------------
