@@ -25,9 +25,15 @@ class Post < ActiveRecord::Base
 		self.destroy
 	end
 
-	def like_post
+	def create_like
 		self.likes.create
 	end
+
+	def create_comment(comment_details, user_id)
+		@comment = self.comments.create(comment_details)
+		@comment.user_id = user_id
+	end
+
 
 	def self.show_all
 		Post.all
