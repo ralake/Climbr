@@ -17,14 +17,34 @@ class Post < ActiveRecord::Base
 
 	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
-	def self.create_post(post_params, user_id)
-		@post = Post.create(post_params)
+	def update_post(post_details)
+		self.update(post_details)
+	end
+
+	def destroy_post
+		self.destroy
+	end
+
+	def like_post
+		self.likes.create
+	end
+
+	def self.show_all
+		Post.all
+	end
+
+	def self.create_post(post_details, user_id)
+		@post = Post.create(post_details)
 		@post.user_id = user_id
 		@post.save
 	end
 
 	def self.find_post(id)
 		@post = Post.find(id)
+	end
+
+	def self.new_post
+		Post.new
 	end
 
 end
