@@ -36,21 +36,21 @@ class Post < ActiveRecord::Base
 
 
 	def self.show_all
-		Post.all
+		all
 	end
 
 	def self.create_post(post_details, user_id)
-		@post = Post.create(post_details)
+		@post = create(post_details)
 		@post.user_id = user_id
 		@post.save
 	end
 
 	def self.find_post(id)
-		@post = Post.find(id)
+		@post = find(id)
 	end
 
 	def self.new_post
-		Post.new
+		new
 	end
 
 end

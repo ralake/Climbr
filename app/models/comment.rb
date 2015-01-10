@@ -4,7 +4,7 @@ class Comment < ActiveRecord::Base
 	belongs_to :user
 
   def self.new_comment
-    Comment.new
+    new
   end
 
 end
