@@ -9,9 +9,7 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.create(post_params)
-		@post.user_id = current_user.id
-		@post.save
+		@post = Post.create_post(post_params, current_user.id)
 		redirect_to posts_path
 	end
 
@@ -24,17 +22,17 @@ class PostsController < ApplicationController
 	end
 
 	def update
-		@post = Post.find(params[:id])
+		@post = Post.find_post(params[:id])
 		@post.update(post_params)
 		redirect_to posts_path
 	end
 
 	def show
-		@post = Post.find(params[:id])
+		@post = Post.find_post(params[:id])
 	end
 
 	def destroy
-		@post = Post.find(params[:id])
+		@post = Post.find_post(params[:id])
 		if current_user.id == @post.user_id
 			@post.destroy
 			flash[:notice] = "Post deleted"
