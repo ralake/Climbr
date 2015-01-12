@@ -1,7 +1,7 @@
 Climbr
 ======
 Makers Academy Week 8 Challenge
-![homepage](https://s3-eu-west-1.amazonaws.com/repoimages/Screen+Shot+2015-01-12+at+09.34.24.png)
+![homepage](https://s3-eu-west-1.amazonaws.com/repoimages/Screen+Shot+2015-01-12+at+10.32.08.png)
 [Heroku Link](https://climbagram.herokuapp.com/)
 
 Brief
