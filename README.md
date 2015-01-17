@@ -1,6 +1,7 @@
 Climbr
 ======
 Makers Academy Week 8 Challenge
+![homepage](https://s3-eu-west-1.amazonaws.com/repoimages/Screen+Shot+2015-01-12+at+10.32.08.png)
 [Heroku Link](https://climbagram.herokuapp.com/)
 
 Brief
@@ -23,7 +24,7 @@ Used AJAX to update likes in real-time without a page refresh.
 
 Challenges
 ----------
-I have an on-going issue with portrait photos being displayed as landscape when the full image is viewed. It seems that this is to do with the image's EXIF data but I cannot find a way of rectifying this. I also stuggled with setting up modals for the forms and posts but this is now in place.
+I have an on-going issue with portrait photos being displayed as landscape when the full image is viewed. It seems that this is to do with the image's iternal EXIF data but I cannot find a way of rectifying this as yet. I also stuggled with setting up modals for the forms and posts but this is now in place.
 
 Technologies
 ------------
