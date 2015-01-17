@@ -1,6 +1,6 @@
 class FindAndUpdatePost
 
-  def self.edit(id, details)
+  def self.call(id, details)
     @post = Post.find(id)
     @post.update(details)
   end

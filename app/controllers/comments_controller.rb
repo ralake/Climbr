@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
 
 	def create
 		@post = FindPosts.one(params[:post_id])
-		CreateNewComment.save(@post, comments_params, current_user.id)
+		CreateNewComment.save(@post.id, comments_params, current_user.id)
 		redirect_to posts_path
 	end
 

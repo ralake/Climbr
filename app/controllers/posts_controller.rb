@@ -19,7 +19,7 @@ class PostsController < ApplicationController
 	end
 
 	def update
-		FindAndUpdatePost.edit(params[:id], post_params)
+		FindAndUpdatePost.call(params[:id], post_params)
 		redirect_to posts_path
 	end
 
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
 		if not_original_user
 			flash[:notice] = "You cannot delete this post"
 		else
-			@post.destroy_post
+			DeletePost.call(@post.id)
 			flash[:notice] = "Post deleted"
 		end
 		redirect_to posts_path

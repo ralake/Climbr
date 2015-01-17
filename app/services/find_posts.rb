@@ -5,7 +5,7 @@ class FindPosts
   end
 
   def self.one(id)
-    @post = Post.find(id)
+    Post.find(id)
   end
 
 end
