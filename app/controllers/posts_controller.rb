@@ -1,35 +1,34 @@
 class PostsController < ApplicationController
 
 	def index
-		@posts = Post.show_all
+		@posts = FindPosts.all
 	end
 
 	def new
-		@post = Post.new_post
+		@post = CreateNewPost.call
 	end
 
 	def create
-		@post = Post.create_post(post_params, current_user.id)
+		@post = CreateNewPost.save(post_params, current_user.id)
 		redirect_to posts_path
 	end
 
 	def edit
-		@post = Post.find_post(params[:id])
+		@post = FindPosts.one(params[:id])
 		if not_original_user then flash[:notice] = "You cannot edit this post" end
 	end
 
 	def update
-		@post = Post.find_post(params[:id])
-		@post.update_post(post_params)
+		FindAndUpdatePost.edit(params[:id], post_params)
 		redirect_to posts_path
 	end
 
 	def show
-		@post = Post.find_post(params[:id])
+		@post = FindPosts.one(params[:id])
 	end
 
 	def destroy
-		@post = Post.find_post(params[:id])
+		@post = FindPosts.one(params[:id])
 		if not_original_user
 			flash[:notice] = "You cannot delete this post"
 		else
@@ -38,6 +37,8 @@ class PostsController < ApplicationController
 		end
 		redirect_to posts_path
 	end
+
+	private
 
 	def post_params
 		params.require(:post).permit(:description, :image, :id)
